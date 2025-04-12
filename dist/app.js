@@ -9,6 +9,4 @@ const port = 3000;
 app.get('/', (req, res) => {
     res.send("Helioo World!");
 });
-app.listen(port, () => {
-    console.log(`Server is running on ${port}`);
-});
+exports.default = app;
