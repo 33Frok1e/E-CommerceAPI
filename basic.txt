@@ -1,8 +1,8 @@
-Modular rules for API Development
+Modular Pattern rules for API Development
 
 1. Interface / Type for typesript definition ✔
 2. Model & Mongoose schema ✔
-3. Zod validation schema
-4. Routes
-5. Controllers
-6. Services
+3. Zod validation schema ✔
+4. Routes ✔
+5. Controllers ✔
+6. Services ✔

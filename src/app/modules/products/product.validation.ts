@@ -13,7 +13,7 @@ export const inventoryValidationSchema = z.object({
 const productValidationSchema = z.object({
     name: z.string({
         required_error: "Name is required",
-        invalid_type_error: "Name must be letter"
+        invalid_type_error: "Name must be string"
     }),
     description: z.string(),
     price: z.number().positive(),
