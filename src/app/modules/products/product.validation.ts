@@ -20,7 +20,7 @@ const productValidationSchema = z.object({
     category: z.string(),
     tags: z.array(z.string()),
     variants: z.array(variantValidationSchema),
-    inventory: z.array(inventoryValidationSchema)
+    inventory: inventoryValidationSchema
 });
 
 export default productValidationSchema;
