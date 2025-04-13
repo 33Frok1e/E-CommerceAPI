@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import app from './app'
+import app from './app';
 import config from './app/config';
 
 async function main() {
@@ -10,6 +10,4 @@ async function main() {
     })
 }
 
-main()
-    .then(() => console.log('MongoDB is connected'))
-    .catch((e) => console.log(`Error is ${e}`))
+main().then(() => console.log('MongoDB is connected')).catch((e) => console.log(`Error is ${e}`));

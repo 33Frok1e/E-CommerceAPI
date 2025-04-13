@@ -1,9 +1,8 @@
 import express from "express";
-const app = express()
-const port = 3000
+const app = express();
 
 app.get('/', (req, res) => {
-    res.send("Helioo World!")
+    res.send("E-commerce server is running!")
 });
 
 export default app;
