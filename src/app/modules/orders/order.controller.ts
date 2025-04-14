@@ -3,15 +3,13 @@ import orderValidationSchema from "./order.validation";
 import { Product } from "../products/product.model";
 import { OrderServices } from "./order.services";
 
-
 const createOrder = async (req: Request, res: Response) => {
     try {
-        // Zod Validation
         const zodValidations = orderValidationSchema.safeParse(req.body);
         
         if (!zodValidations.success) {
             const errorLists = zodValidations.error.issues.map((err) => err.message);
-            return res.status(400).json({  // Changed from 500 to 400 for validation errors
+            return res.status(400).json({
                 success: false,
                 message: "Validation Error",
                 errors: errorLists 
@@ -35,22 +33,46 @@ const createOrder = async (req: Request, res: Response) => {
             });
         }
 
-        // Update product inventory
         product.inventory.quantity -= quantity;
         product.inventory.inStock = product.inventory.quantity > 0;
-        
-        // Save product and create order
+
         const [updatedProduct, newOrder] = await Promise.all([
             product.save(),
             OrderServices.createANewOrder(zodValidations.data)
         ]);
 
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
             message: "Order placed successfully!",
             data: newOrder
         });
 
+    } catch (err: any) {
+        return res.status(500).json({
+            success: false,
+            message: err.message || 'Something went wrong',
+            error: err
+        });
+    }
+}
+
+const handleGetAllOrders = async (req: Request, res: Response) => {
+    const email = req.query.email
+    try {
+        const orders = await OrderServices.getAllOrdersFromDB(email as string | undefined);
+        if(orders.length === 0) {
+            return res.status(200).json({
+                success: true,
+                message: "No Orders found for this email",
+                data: []
+            })
+        };
+
+        return res.status(200).json({
+            success:true,
+            message: "Orders founded succesfully!",
+            data: orders
+        });
     } catch (err: any) {
         res.status(500).json({
             success: false,
@@ -61,6 +83,7 @@ const createOrder = async (req: Request, res: Response) => {
 }
 
 
-export const OrderControllers = {
-    createOrder
+export const OrderController = {
+    createOrder,
+    handleGetAllOrders
 }
