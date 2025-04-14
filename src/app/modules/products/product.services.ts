@@ -7,6 +7,13 @@ const createAProductIntoDB = async (productData: TProduct) => {
     return result;
 }
 
+const getProductsFromDB = async (searchTerm = '') => {
+    const query = searchTerm ? {name: {$regex: searchTerm, $options: 'i'}} : {}
+    const data = await Product.find(query);
+    return data;
+}
+
 export const ProductServices = {
-    createAProductIntoDB
+    createAProductIntoDB,
+    getProductsFromDB
 }
