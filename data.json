@@ -1,0 +1,77 @@
+[
+    {
+      "name": "iPhone 13",
+      "description": "A powerful smartphone with A15 Bionic chip",
+      "price": 799,
+      "category": "Smartphones",
+      "tags": ["apple", "flagship", "5G"],
+      "variants": [
+        { "type": "color", "value": "Midnight Blue" },
+        { "type": "storage", "value": "128GB" }
+      ],
+      "inventory": {
+        "quantity": 50,
+        "inStock": true
+      }
+    },
+    {
+      "name": "Samsung Galaxy S21",
+      "description": "Premium Android phone with 120Hz display",
+      "price": 699,
+      "category": "Smartphones",
+      "tags": ["android", "samsung", "5G"],
+      "variants": [
+        { "type": "color", "value": "Phantom Black" },
+        { "type": "storage", "value": "256GB" }
+      ],
+      "inventory": {
+        "quantity": 30,
+        "inStock": true
+      }
+    },
+    {
+      "name": "MacBook Pro 14",
+      "description": "High-performance laptop with M1 Pro chip",
+      "price": 1999,
+      "category": "Laptops",
+      "tags": ["apple", "premium", "workstation"],
+      "variants": [
+        { "type": "color", "value": "Space Gray" },
+        { "type": "RAM", "value": "16GB" }
+      ],
+      "inventory": {
+        "quantity": 20,
+        "inStock": true
+      }
+    },
+    {
+      "name": "Sony WH-1000XM4",
+      "description": "Noise-cancelling wireless headphones",
+      "price": 349,
+      "category": "Audio",
+      "tags": ["wireless", "noise-cancelling", "bluetooth"],
+      "variants": [
+        { "type": "color", "value": "Black" },
+        { "type": "warranty", "value": "2 years" }
+      ],
+      "inventory": {
+        "quantity": 15,
+        "inStock": true
+      }
+    },
+    {
+      "name": "Logitech MX Master 3",
+      "description": "Wireless ergonomic mouse for productivity",
+      "price": 99,
+      "category": "Accessories",
+      "tags": ["wireless", "ergonomic", "premium"],
+      "variants": [
+        { "type": "color", "value": "Graphite" },
+        { "type": "connectivity", "value": "Bluetooth" }
+      ],
+      "inventory": {
+        "quantity": 0,
+        "inStock": false
+      }
+    }
+  ]
