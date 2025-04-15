@@ -1,1 +1,19 @@
-.env
+node_modules
+*.env
+*.local
+
+logs
+*.log
+npm-debug.log
+
+
+.vscode/*
+! .vscode/extension.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*sw?
+.vercel
