@@ -1,20 +1,15 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "src/server.ts",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/api/.*",
-        "dest": "src/server.ts"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "src/server.ts",
-        "methods": ["GET"]
-      }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/api/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/api/index.ts"
+    }
+  ]
+}

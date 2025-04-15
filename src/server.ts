@@ -1,13 +1,35 @@
+// import mongoose from 'mongoose';
+// import app from './app';
+// import config from './app/config';
+
+// async function main() {
+//     await mongoose.connect(config.db_url as string);
+
+//     app.listen(config.port, () => {
+//         console.log(`Server is running on ${config.port}`);
+//     })
+// }
+
+// main().then(() => console.log('MongoDB is connected')).catch((e) => console.log(`Error is ${e}`));
+
+// src/server.ts
 import mongoose from 'mongoose';
 import app from './app';
 import config from './app/config';
 
-async function main() {
-    await mongoose.connect(config.db_url as string);
+let isConnected = false;
 
-    app.listen(config.port, () => {
-        console.log(`Server is running on ${config.port}`);
-    })
+export async function connectDB() {
+    if (isConnected) return;
+
+    try {
+        await mongoose.connect(config.db_url as string);
+        isConnected = true;
+        console.log('MongoDB connected');
+    } catch (err) {
+        console.error('DB Connection Error:', err);
+        throw err;
+    }
 }
 
-main().then(() => console.log('MongoDB is connected')).catch((e) => console.log(`Error is ${e}`));
+export default app;
