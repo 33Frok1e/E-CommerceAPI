@@ -5,7 +5,7 @@ import { isAdmin } from '../../middleware/adminMiddleware';
 const router = express.Router();
 
 router.get('/', ProductControllers.getAllProducts);
-router.post('/', verifyToken, ProductControllers.createProduct);
+router.post('/', verifyToken, isAdmin, ProductControllers.createProduct);
 router.get('/:productId', ProductControllers.getSingleProduct);
 router.put('/:productId', verifyToken, isAdmin, ProductControllers.updateProduct);
 router.delete('/:productId', verifyToken, isAdmin, ProductControllers.deleteProduct);
