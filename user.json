@@ -1,0 +1,27 @@
+[
+    {
+      "email": "mratikrishna@gmail.com",
+      "password": "123322477",
+      "role": "user"
+    },
+    {
+      "email": "jainshruti@gmail.com",
+      "password": "7893214",
+      "role": "admin"
+    },
+    {
+      "email": "elinakarimova@gmail.com",
+      "password": "eli4122",
+      "role": "user"
+    },
+    {
+      "email": "manager@company.org",
+      "password": "company789",
+      "role": "admin"
+    },
+    {
+      "email": "johndoe@mail.com",
+      "password": "johnbanegadon",
+      "role": "user"
+    }
+  ]
